@@ -15,6 +15,9 @@ class ChatBot extends Component {
         this.changeToSofa2 = this.changeToSofa2.bind(this)
         this.changeToLeather = this.changeToLeather.bind(this)
         this.changeToCarpet = this.changeToCarpet.bind(this)
+        this.changeToCarpet1 = this.changeToCarpet1.bind(this)
+        this.changeToCarpet2 = this.changeToCarpet2.bind(this)
+        this.changeToCarpet3 = this.changeToCarpet3.bind(this)
         this.changeToHouse = this.changeToHouse.bind(this)
         this.changeToKitchen = this.changeToKitchen.bind(this)
         this.changeToBathroom = this.changeToBathroom.bind(this)
@@ -52,6 +55,21 @@ class ChatBot extends Component {
         document.getElementById("overlay-Carpet").style.display = "block"
         this.setState({
             url: "https://buildar.in/clean/carpetcharges.mp4"
+        })
+    }
+    changeToCarpet1() {
+        this.setState({
+            url: "https://buildar.in/clean/carpet1.mp4"
+        })
+    }
+    changeToCarpet2() {
+        this.setState({
+            url: "https://buildar.in/clean/carpet2.mp4"
+        })
+    }
+    changeToCarpet3() {
+        this.setState({
+            url: "https://buildar.in/clean/carpet3.mp4"
         })
     }
     changeToHouse() {
@@ -145,9 +163,9 @@ class ChatBot extends Component {
                         <div id="overlay-Leather-Sofa" style={{ display: "none" }}>
                         </div>
                         <div id="overlay-Carpet" style={{ display: "none" }}>
-                            <a type="button" className="btn btn-primary2 " href="#">Carpet 1</a>
-                            <a type="button" className="btn btn-primary2 " href="#">Carpet 2</a>
-                            <a type="button" className="btn btn-primary2" href="#">Carpet 3</a>
+                            <button type="button" className="btn btn-primary2" onClick={this.changeToCarpet1} href="#">Carpet 1</button>
+                            <button type="button" className="btn btn-primary2" onClick={this.changeToCarpet2} href="#">Carpet 2</button>
+                            <button type="button" className="btn btn-primary2" onClick={this.changeToCarpet3} href="#">Carpet 3</button>
                         </div>
                     </div>
                 </div>
