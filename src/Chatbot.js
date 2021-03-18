@@ -11,13 +11,12 @@ class ChatBot extends Component {
             transitionClass: ''
         }
         this.changeToSofa = this.changeToSofa.bind(this)
-        this.changeToSofa1 = this.changeToSofa1.bind(this)
-        this.changeToSofa2 = this.changeToSofa2.bind(this)
+        this.sofaCharges = this.sofaCharges.bind(this)
+        this.sofaProcess = this.sofaProcess.bind(this)
         this.changeToLeather = this.changeToLeather.bind(this)
         this.changeToCarpet = this.changeToCarpet.bind(this)
-        this.changeToCarpet1 = this.changeToCarpet1.bind(this)
-        this.changeToCarpet2 = this.changeToCarpet2.bind(this)
-        this.changeToCarpet3 = this.changeToCarpet3.bind(this)
+        this.carpetCharges = this.carpetCharges.bind(this)
+        this.carpetProcess = this.carpetProcess.bind(this)
         this.changeToHouse = this.changeToHouse.bind(this)
         this.changeToKitchen = this.changeToKitchen.bind(this)
         this.changeToBathroom = this.changeToBathroom.bind(this)
@@ -28,19 +27,24 @@ class ChatBot extends Component {
 
     changeToSofa() {
         document.getElementById("overlay-intro").style.display = "none"
-        document.getElementById("overlay-Sofa").style.display = "block"
+        document.getElementById("overlay-Sofa-options").style.display = "block"
+        document.getElementById("video-bot").style.display = "block"
         this.setState({
-            url: "https://buildar.in/clean/sofacharges.mp4"
+            isHeadClicked: !this.state.isHeadClicked
         })
     }
-    changeToSofa1() {
+    sofaCharges() {
+        document.getElementById("video-bot").style.display = "block"
         this.setState({
-            url: "https://buildar.in/clean/sofa1.mp4"
+            url: "https://buildar.in/clean/sofacharges.mp4",
+            isHeadClicked: true
         })
     }
-    changeToSofa2() {
+    sofaProcess() {
+        document.getElementById("video-bot").style.display = "block"
         this.setState({
-            url: "https://buildar.in/clean/sofa2.mp4"
+            url: "https://buildar.in/clean/process1.mp4",
+            isHeadClicked: true
         })
     }
     changeToLeather() {
@@ -52,24 +56,16 @@ class ChatBot extends Component {
     }
     changeToCarpet() {
         document.getElementById("overlay-intro").style.display = "none"
-        document.getElementById("overlay-Carpet").style.display = "block"
+        document.getElementById("overlay-Carpet-options").style.display = "block"
+    }
+    carpetCharges() {
         this.setState({
-            url: "https://buildar.in/clean/carpetcharges.mp4"
+            url: "https://buildar.in/clean/carpetcharge.mp4"
         })
     }
-    changeToCarpet1() {
+    carpetProcess() {
         this.setState({
-            url: "https://buildar.in/clean/carpet1.mp4"
-        })
-    }
-    changeToCarpet2() {
-        this.setState({
-            url: "https://buildar.in/clean/carpet2.mp4"
-        })
-    }
-    changeToCarpet3() {
-        this.setState({
-            url: "https://buildar.in/clean/carpet3.mp4"
+            url: "https://buildar.in/clean/process2.mp4"
         })
     }
     changeToHouse() {
@@ -103,9 +99,9 @@ class ChatBot extends Component {
         if (this.state.transitionClass === '') {
             document.getElementById("chathead").style.display = "none"
             document.getElementById("overlay-intro").style.display = "block"
-            document.getElementById("overlay-Sofa").style.display = "none"
-            document.getElementById("overlay-Leather-Sofa").style.display = "none"
-            document.getElementById("overlay-Carpet").style.display = "none"
+            document.getElementById("overlay-Sofa-options").style.display = "none"
+            // document.getElementById("overlay-Leather-Sofa").style.display = "none"
+            document.getElementById("overlay-Carpet-options").style.display = "none"
             this.setState({
                 transitionClass: 'animate',
                 url: "https://buildar.in/clean/sophie.mp4",
@@ -149,23 +145,26 @@ class ChatBot extends Component {
                     <div className="overlay" >
                         <div id="overlay-intro">
                             <button className="btn btn-primary2" onClick={this.changeToSofa}>Sofa</button>
-                            <button className="btn btn-primary2" onClick={this.changeToLeather}>Leather Sofa</button>
+                            {/* <button className="btn btn-primary2" onClick={this.changeToLeather}>Leather Sofa</button> */}
                             <button className="btn btn-primary2" onClick={this.changeToCarpet}>Carpet</button>
-                            <button className="btn btn-primary2" onClick={this.changeToHouse}>House Cleaning</button>
+                            {/* <button className="btn btn-primary2" onClick={this.changeToHouse}>House Cleaning</button>
                             <button className="btn btn-primary2" onClick={this.changeToKitchen}>Kitchen</button>
                             <button className="btn btn-primary2" onClick={this.changeToBathroom}>Bathroom</button>
-                            <button className="btn btn-primary2" onClick={this.changeToFullHouse}>FullHouse</button>
+                            <button className="btn btn-primary2" onClick={this.changeToFullHouse}>FullHouse</button> */}
                         </div>
-                        <div id="overlay-Sofa" style={{ display: "none" }}>
-                            <button type="button" className="btn btn-primary2 " href="#" onClick={this.changeToSofa1}>Sofa 1</button>
-                            <button type="button" className="btn btn-primary2 " href="#" onClick={this.changeToSofa2}>Sofa 2</button>
+                        {/* <div id="overlay-Sofa" style={{ display: "none" }}>
+                            <button type="button" className="btn btn-primary2 " onClick={this.changeToSofa1}>Process 1 for cleaning sofa</button>
+                            <button type="button" className="btn btn-primary2 " onClick={this.changeToSofa2}>Process 2 for cleaning sofa</button>
+                        </div> */}
+                        <div id="overlay-Sofa-options" style={{ display: "none" }}>
+                            <h5>What do you want to know about<br /> sofa services?</h5>
+                            <button type="button" className="btn btn-primary2" onClick={this.sofaProcess}>Process of Cleaning</button>
+                            <button type="button" className="btn btn-primary2" onClick={this.sofaCharges}>Charges</button>
                         </div>
-                        <div id="overlay-Leather-Sofa" style={{ display: "none" }}>
-                        </div>
-                        <div id="overlay-Carpet" style={{ display: "none" }}>
-                            <button type="button" className="btn btn-primary2" onClick={this.changeToCarpet1} href="#">Carpet 1</button>
-                            <button type="button" className="btn btn-primary2" onClick={this.changeToCarpet2} href="#">Carpet 2</button>
-                            <button type="button" className="btn btn-primary2" onClick={this.changeToCarpet3} href="#">Carpet 3</button>
+                        <div id="overlay-Carpet-options" style={{ display: "none" }}>
+                            <h5>What do you want to know about<br /> carpet services?</h5>
+                            <button type="button" className="btn btn-primary2" onClick={this.carpetProcess} >Process of Cleaning</button>
+                            <button type="button" className="btn btn-primary2" onClick={this.carpetCharges} >Charges</button>
                         </div>
                     </div>
                 </div>
