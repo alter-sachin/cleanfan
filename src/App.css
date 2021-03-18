@@ -108,7 +108,7 @@
 }
 
 #chat-bot .overlay button,#chat-bot .overlay a{
-  font-size: 1.125em;
+  font-size: 1em;
   display: block;
   width: 80%;
   border-radius: 1em;
@@ -116,8 +116,13 @@
     color: white;
     font-weight: 500;
   text-decoration: none;
+  border: solid 2px transparent;
 }
 
+#chat-bot .overlay button:hover{
+  border: solid 2px black;
+  transition: 0.25s ease-in-out;
+}
 
 #chat-bot .overlay-articles a{
   font-size: 1.125em;
