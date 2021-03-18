@@ -37,6 +37,8 @@ class ChatBot extends Component {
         })
     }
     sofaCharges() {
+        document.getElementById("sofa-intro-text").style.display = "none"
+        document.getElementById("sofa-charges").style.display = "block"
         document.getElementById("video-bot").style.display = "block"
         this.setState({
             url: "https://buildar.in/clean/sofacharges.mp4",
@@ -44,6 +46,8 @@ class ChatBot extends Component {
         })
     }
     sofaProcess() {
+        document.getElementById("sofa-intro-text").style.display = "block"
+        document.getElementById("sofa-charges").style.display = "none"
         document.getElementById("video-bot").style.display = "block"
         this.setState({
             url: "https://buildar.in/clean/process1.mp4",
@@ -67,11 +71,15 @@ class ChatBot extends Component {
         })
     }
     carpetCharges() {
+        document.getElementById("carpet-intro-text").style.display = "none"
+        document.getElementById("carpet-charges").style.display = "block"
         this.setState({
             url: "https://buildar.in/clean/carpetcharge.mp4"
         })
     }
     carpetProcess() {
+        document.getElementById("carpet-intro-text").style.display = "block"
+        document.getElementById("carpet-charges").style.display = "none"
         this.setState({
             url: "https://buildar.in/clean/process2.mp4"
         })
@@ -108,6 +116,10 @@ class ChatBot extends Component {
             document.getElementById("chathead").style.display = "none"
             document.getElementById("intro-text").style.display = "block"
             document.getElementById("overlay-intro").style.display = "block"
+            document.getElementById("carpet-intro-text").style.display = "block"
+            document.getElementById("carpet-charges").style.display = "none"
+            document.getElementById("sofa-intro-text").style.display = "block"
+            document.getElementById("sofa-charges").style.display = "none"
             document.getElementById("overlay-Sofa-options").style.display = "none"
             // document.getElementById("overlay-Leather-Sofa").style.display = "none"
             document.getElementById("overlay-Carpet-options").style.display = "none"
@@ -129,6 +141,10 @@ class ChatBot extends Component {
         document.getElementById("overlay-intro").style.display = "block"
         document.getElementById("overlay-Sofa-options").style.display = "none"
         // document.getElementById("overlay-Leather-Sofa").style.display = "none"
+        document.getElementById("carpet-intro-text").style.display = "block"
+        document.getElementById("sofa-intro-text").style.display = "block"
+        document.getElementById("sofa-charges").style.display = "none"
+        document.getElementById("carpet-charges").style.display = "none"
         document.getElementById("overlay-Carpet-options").style.display = "none"
         this.setState({
             url: "https://buildar.in/clean/sophie.mp4",
@@ -149,7 +165,7 @@ class ChatBot extends Component {
             <div id="main">
                 <div id="chat-bot" className={this.state.transitionClass}>
                     <button className="close" onClick={this.closeBot} />
-                    <a className="arrow-left" onClick={this.resetBot}></a>
+                    <a className="arrow-left" onClick={this.resetBot}>Back</a>
                     <ReactPlayer
                         id="video-bot"
                         className="videoInsert"
@@ -178,12 +194,14 @@ class ChatBot extends Component {
                             <button type="button" className="btn btn-primary2 " onClick={this.changeToSofa2}>Process 2 for cleaning sofa</button>
                         </div> */}
                         <div id="overlay-Sofa-options" style={{ display: "none" }}>
-                            <h5>What do you want to know about<br /> sofa services?</h5>
+                            <h5 id="sofa-intro-text">What do you want to know about<br /> sofa services?</h5>
+                            <h5 id="sofa-charges" style={{ display: "none" }}>Charges are<br />350 Rupees per seat</h5>
                             <button type="button" className="btn btn-primary2" onClick={this.sofaProcess}>Process of Cleaning</button>
                             <button type="button" className="btn btn-primary2" onClick={this.sofaCharges}>Charges</button>
                         </div>
                         <div id="overlay-Carpet-options" style={{ display: "none" }}>
-                            <h5>What do you want to know about<br /> carpet services?</h5>
+                            <h5 id="carpet-intro-text">What do you want to know about<br /> carpet services?</h5>
+                            <h5 id="carpet-charges" style={{ display: "none" }}>Charges are <br /> 25 Rupees per square feet</h5>
                             <button type="button" className="btn btn-primary2" onClick={this.carpetProcess} >Process of Cleaning</button>
                             <button type="button" className="btn btn-primary2" onClick={this.carpetCharges} >Charges</button>
                         </div>

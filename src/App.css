@@ -202,17 +202,18 @@ h5{
 .close:after {
   transform: rotate(-45deg);
 }
+a{
+  text-decoration: none !important;
+}
 
 .arrow-left {
+  cursor: pointer;
   width: 0; 
-  top: 0.48em;
-  right: 1.75em;
+  color: black;
+  left: 0.25em;
   z-index: 3;
   position: absolute;
   height: 0; 
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-right:10px solid black; 
 }
 
 .initial_overlay{
