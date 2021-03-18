@@ -1,12 +1,12 @@
 import './App.css';
-import Chatbot from './Chatbot.js'
-
+import Chatbot from './Chatbot.js';
+import Logo from "./logo.png";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src="../public/Logo_BuildAR_full.png" className="App-logo" alt="logo" />
+        <img src={Logo} className="App-logo" alt="logo" />
         <p>
           Talk <code>to BuildAR's</code> Sophie.
         </p>
