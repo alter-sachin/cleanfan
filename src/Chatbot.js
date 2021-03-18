@@ -20,6 +20,7 @@ class ChatBot extends Component {
         this.changeToBathroom = this.changeToBathroom.bind(this)
         this.changeToFullHouse = this.changeToFullHouse.bind(this)
         this.showBot = this.showBot.bind(this)
+        this.closeBot = this.closeBot.bind(this)
     }
 
     changeToSofa() {
@@ -73,6 +74,7 @@ class ChatBot extends Component {
     }
     changeToFullHouse() {
         document.getElementById("overlay-intro").style.display = "none"
+        document.getElementById("chat-bot").style.display = "none"
         this.setState({
             url: "https://buildar.in/vid/1615801043.2547426.mp4"
         })
@@ -82,8 +84,13 @@ class ChatBot extends Component {
     showBot() {
         if (this.state.transitionClass === '') {
             document.getElementById("chathead").style.display = "none"
+            document.getElementById("overlay-intro").style.display = "block"
+            document.getElementById("overlay-Sofa").style.display = "none"
+            document.getElementById("overlay-Leather-Sofa").style.display = "none"
+            document.getElementById("overlay-Carpet").style.display = "none"
             this.setState({
                 transitionClass: 'animate',
+                url: "https://buildar.in/clean/sophie.mp4",
                 isHeadClicked: !this.state.isHeadClicked
             })
         }
@@ -94,20 +101,27 @@ class ChatBot extends Component {
             })
         }
     }
+    closeBot() {
+        document.getElementById("chathead").style.display = "block"
+        this.setState({
+            transitionClass: '',
+            isHeadClicked: !this.state.isHeadClicked
+        })
+    }
 
     render() {
         const { url, isHeadClicked } = this.state
         return (
             <div id="main">
                 <div id="chat-bot" className={this.state.transitionClass}>
-
+                    <button href="#" className="close" onClick={this.closeBot} />
                     <ReactPlayer
                         id="video-bot"
                         className="videoInsert"
                         playing={isHeadClicked}
                         controlsList="nodownload"
                         width="320px"
-                        height="300px"
+                        height="185px"
                         // onContextMenu={(e) => e.preventDefault()}
                         /* style={{width: "160px",height:"90px"}}*/
                         url={url}
