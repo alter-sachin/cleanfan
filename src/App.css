@@ -50,14 +50,16 @@
 }
 h5{
   color: black;
-  margin-top: 2em;
-  margin-bottom: 2em;
 }
 /* Chatbot */
 .chatbot-head{
   position: fixed;
     bottom: 23px;
   right: 23px;
+}
+
+#main p{
+  font-size: 20px;
 }
 
 .chatbot-head button{
@@ -199,6 +201,18 @@ h5{
 }
 .close:after {
   transform: rotate(-45deg);
+}
+
+.arrow-left {
+  width: 0; 
+  top: 0.48em;
+  right: 1.75em;
+  z-index: 3;
+  position: absolute;
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right:10px solid black; 
 }
 
 .initial_overlay{

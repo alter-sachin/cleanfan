@@ -8,7 +8,7 @@ class ChatBot extends Component {
         this.state = {
             url: "https://buildar.in/clean/sophie.mp4",
             isHeadClicked: false,
-            transitionClass: ''
+            transitionClass: '',
         }
         this.changeToSofa = this.changeToSofa.bind(this)
         this.sofaCharges = this.sofaCharges.bind(this)
@@ -23,14 +23,17 @@ class ChatBot extends Component {
         this.changeToFullHouse = this.changeToFullHouse.bind(this)
         this.showBot = this.showBot.bind(this)
         this.closeBot = this.closeBot.bind(this)
+        this.resetBot = this.resetBot.bind(this)
     }
 
     changeToSofa() {
         document.getElementById("overlay-intro").style.display = "none"
+        document.getElementById("intro-text").style.display = "none"
         document.getElementById("overlay-Sofa-options").style.display = "block"
         document.getElementById("video-bot").style.display = "block"
         this.setState({
-            isHeadClicked: !this.state.isHeadClicked
+            url: "https://buildar.in/clean/base.mp4",
+            isHeadClicked: true
         })
     }
     sofaCharges() {
@@ -55,8 +58,13 @@ class ChatBot extends Component {
         })
     }
     changeToCarpet() {
+        document.getElementById("intro-text").style.display = "none"
         document.getElementById("overlay-intro").style.display = "none"
         document.getElementById("overlay-Carpet-options").style.display = "block"
+        this.setState({
+            url: "https://buildar.in/clean/base.mp4",
+            isHeadClicked: true
+        })
     }
     carpetCharges() {
         this.setState({
@@ -98,6 +106,7 @@ class ChatBot extends Component {
     showBot() {
         if (this.state.transitionClass === '') {
             document.getElementById("chathead").style.display = "none"
+            document.getElementById("intro-text").style.display = "block"
             document.getElementById("overlay-intro").style.display = "block"
             document.getElementById("overlay-Sofa-options").style.display = "none"
             // document.getElementById("overlay-Leather-Sofa").style.display = "none"
@@ -115,6 +124,17 @@ class ChatBot extends Component {
             })
         }
     }
+    resetBot() {
+        document.getElementById("intro-text").style.display = "block"
+        document.getElementById("overlay-intro").style.display = "block"
+        document.getElementById("overlay-Sofa-options").style.display = "none"
+        // document.getElementById("overlay-Leather-Sofa").style.display = "none"
+        document.getElementById("overlay-Carpet-options").style.display = "none"
+        this.setState({
+            url: "https://buildar.in/clean/sophie.mp4",
+            isHeadClicked: true
+        })
+    }
     closeBot() {
         document.getElementById("chathead").style.display = "block"
         this.setState({
@@ -128,7 +148,8 @@ class ChatBot extends Component {
         return (
             <div id="main">
                 <div id="chat-bot" className={this.state.transitionClass}>
-                    <button href="#" className="close" onClick={this.closeBot} />
+                    <button className="close" onClick={this.closeBot} />
+                    <a className="arrow-left" onClick={this.resetBot}></a>
                     <ReactPlayer
                         id="video-bot"
                         className="videoInsert"
@@ -140,7 +161,7 @@ class ChatBot extends Component {
                         /* style={{width: "160px",height:"90px"}}*/
                         url={url}
                     />
-
+                    <p id="intro-text">Hi, I'm Sophie from CleanFanatic.<br /> What type of services do you need?</p>
 
                     <div className="overlay" >
                         <div id="overlay-intro">
