@@ -40,7 +40,7 @@
 .chatbot-head{
   position: fixed;
     bottom: 23px;
-  right: 0;
+  right: 23px;
 }
 
 .chatbot-head button{
@@ -109,7 +109,7 @@
 }
 
 #chat-bot .overlay button,#chat-bot .overlay a{
-  font-size: 1em;
+  font-size: 0.8em;
   display: block;
   width: 80%;
   border-radius: 1em;
