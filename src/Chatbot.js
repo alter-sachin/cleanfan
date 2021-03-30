@@ -143,7 +143,7 @@ class ChatBot extends Component {
             <div id="main">
                 <div id="chat-bot" className={this.state.transitionClass}>
                     <button className="close" onClick={() => { this.change("closeBot") }} />
-                    <a className="arrow-left" onClick={() => { this.change("resetBot") }}>Back</a>
+                    <a className="arrow-left" onClick={() => { this.change("resetBot") }}>Menu</a>
                     <ReactPlayer
                         id="video-bot"
                         className="videoInsert"
