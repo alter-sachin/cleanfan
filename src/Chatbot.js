@@ -6,7 +6,7 @@ class ChatBot extends Component {
         super(props)
 
         this.state = {
-            url: "https://buildar.in/clean/sophie.mp4",
+            url: "https://dreal.in/clean/sophie.mp4",
             isHeadClicked: false,
             transitionClass: '',
         }
@@ -19,7 +19,7 @@ class ChatBot extends Component {
                 document.getElementById("overlay-Sofa-options").style.display = "block"
                 document.getElementById("video-bot").style.display = "block"
                 this.setState({
-                    url: "https://buildar.in/clean/base.mp4",
+                    url: "https://dreal.in/clean/base.mp4",
                     isHeadClicked: true
                 })
                 break;
@@ -29,7 +29,7 @@ class ChatBot extends Component {
                 document.getElementById("sofa-charges").style.display = "block"
                 document.getElementById("video-bot").style.display = "block"
                 this.setState({
-                    url: "https://buildar.in/clean/sofacharges.mp4",
+                    url: "https://dreal.in/clean/sofacharges.mp4",
                     isHeadClicked: true
                 })
                 break;
@@ -39,7 +39,7 @@ class ChatBot extends Component {
                 document.getElementById("sofa-charges").style.display = "none"
                 document.getElementById("video-bot").style.display = "block"
                 this.setState({
-                    url: "https://buildar.in/clean/process1.mp4",
+                    url: "https://dreal.in/clean/process1.mp4",
                     isHeadClicked: true
                 })
                 break;
@@ -48,7 +48,7 @@ class ChatBot extends Component {
                 document.getElementById("overlay-intro").style.display = "none"
                 document.getElementById("overlay-Leather-Sofa").style.display = "block"
                 this.setState({
-                    url: "https://buildar.in/clean/sofa3.mp4"
+                    url: "https://dreal.in/clean/sofa3.mp4"
                 })
                 break;
 
@@ -57,7 +57,7 @@ class ChatBot extends Component {
                 document.getElementById("overlay-intro").style.display = "none"
                 document.getElementById("overlay-Carpet-options").style.display = "block"
                 this.setState({
-                    url: "https://buildar.in/clean/base.mp4",
+                    url: "https://dreal.in/clean/base.mp4",
                     isHeadClicked: true
                 })
                 break;
@@ -67,7 +67,7 @@ class ChatBot extends Component {
                 document.getElementById("carpet-intro-text").style.display = "none"
                 document.getElementById("carpet-charges").style.display = "block"
                 this.setState({
-                    url: "https://buildar.in/clean/carpetcharge.mp4"
+                    url: "https://dreal.in/clean/carpetcharge.mp4"
                 })
                 break;
 
@@ -76,7 +76,7 @@ class ChatBot extends Component {
                 document.getElementById("carpet-intro-text").style.display = "block"
                 document.getElementById("carpet-charges").style.display = "none"
                 this.setState({
-                    url: "https://buildar.in/clean/process2.mp4"
+                    url: "https://dreal.in/clean/process2.mp4"
                 })
                 break;
 
@@ -95,7 +95,7 @@ class ChatBot extends Component {
                     document.getElementById("overlay-Carpet-options").style.display = "none"
                     this.setState({
                         transitionClass: 'animate',
-                        url: "https://buildar.in/clean/sophie.mp4",
+                        url: "https://dreal.in/clean/sophie.mp4",
                         isHeadClicked: !this.state.isHeadClicked
                     })
                 }
@@ -111,14 +111,13 @@ class ChatBot extends Component {
                 document.getElementById("intro-text").style.display = "block"
                 document.getElementById("overlay-intro").style.display = "block"
                 document.getElementById("overlay-Sofa-options").style.display = "none"
-                // document.getElementById("overlay-Leather-Sofa").style.display = "none"
                 document.getElementById("carpet-intro-text").style.display = "block"
                 document.getElementById("sofa-intro-text").style.display = "block"
                 document.getElementById("sofa-charges").style.display = "none"
                 document.getElementById("carpet-charges").style.display = "none"
                 document.getElementById("overlay-Carpet-options").style.display = "none"
                 this.setState({
-                    url: "https://buildar.in/clean/sophie.mp4",
+                    url: "https://dreal.in/clean/sophie.mp4",
                     isHeadClicked: true
                 })
                 break;
@@ -198,7 +197,7 @@ class ChatBot extends Component {
                             width="170px"
                             controlsList="nodownload"
                             // onContextMenu={(e) => e.preventDefault()}
-                            url="https://buildar.in/clean/sophie.mp4"
+                            url="https://dreal.in/clean/sophie.mp4"
                         />
                         <div className="initial_overlay">Hi!! How can I help you?</div>
                     </button>
